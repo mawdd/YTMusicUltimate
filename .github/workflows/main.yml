@@ -59,7 +59,9 @@ jobs:
         if: steps.SDK.outputs.cache-hit != 'true'
         run: |
           git clone --quiet -n --depth=1 --filter=tree:0 https://github.com/arichorn/sdks/
-          cd sdks
+          curl https://github.com/xybp888/iOS-SDKs/tree/d7f1be9f5b79cffcfb547bbd930f92ec0fc35038/iPhoneOS16.2.sdk
+          #cd sdks
+          cd iPhoneOS16.2.sdk
           git sparse-checkout set --no-cone iPhoneOS16.2.sdk
           git checkout
           mv *.sdk $THEOS/sdks
